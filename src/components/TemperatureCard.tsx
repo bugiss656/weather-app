@@ -1,4 +1,4 @@
-import { roundTemperatureValue, changeDateFormat } from '../utils'
+import { changeDateFormat } from '../utils'
 
 import { FaTemperatureLow } from 'react-icons/fa'
 import { FaLocationArrow } from 'react-icons/fa'
@@ -27,7 +27,7 @@ const TemperatureCard = ({ displayName, dateTime, value }: IProps) => {
                     <IconContext.Provider value={{ size: '32', style: { marginTop: '5px' } }}>
                         <FaTemperatureLow />
                     </IconContext.Provider>
-                    <p className="text-5xl px-4">{roundTemperatureValue(value)} &deg;C</p>
+                    <p className="text-5xl px-4">{value} &deg;C</p>
                 </div>
             </div>
             <div className="py-3">{changeDateFormat(dateTime, 'd MMM yy, HH:mm:ss')}</div>

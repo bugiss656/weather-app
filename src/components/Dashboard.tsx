@@ -114,17 +114,17 @@ const Dashboard = () => {
 
     useEffect(() => {
         fetchCitiesData('http://localhost:8000/cities')
-        fetchLatestTemperatureData(`http://localhost:8000/${DEFAULT_CITY}/chartData/temperature/latest`)
-        fetchTemperatureData(`http://localhost:8000/${DEFAULT_CITY}/chartData/temperature`) 
-        fetchMaxTemperatureData(`http://localhost:8000/${DEFAULT_CITY}/chartData/temperature/max`)
+        fetchLatestTemperatureData(`http://localhost:8000/chartData/temperature/latest/${DEFAULT_CITY}`)
+        fetchTemperatureData(`http://localhost:8000/chartData/temperature/${DEFAULT_CITY}`) 
+        fetchMaxTemperatureData(`http://localhost:8000/chartData/temperature/max/${DEFAULT_CITY}`)
     }, [])
 
     
     useEffect(() => {
         if(currentCity) {
-            fetchLatestTemperatureData(`http://localhost:8000/${currentCity.name}/chartData/temperature/latest`)
-            fetchTemperatureData(`http://localhost:8000/${currentCity.name}/chartData/temperature`) 
-            fetchMaxTemperatureData(`http://localhost:8000/${currentCity.name}/chartData/temperature/max`)
+            fetchLatestTemperatureData(`http://localhost:8000/chartData/temperature/latest/${currentCity.name}`)
+            fetchTemperatureData(`http://localhost:8000/chartData/temperature/${currentCity.name}`) 
+            fetchMaxTemperatureData(`http://localhost:8000/chartData/temperature/max/${currentCity.name}`)
         }
     }, [currentCity])
 
